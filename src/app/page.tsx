@@ -1,9 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { MoveRight } from 'lucide-react';
-import Image from "next/image";  
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
+import Image from "next/image";
 
 // --------------------
 // Mock Services Data
@@ -38,27 +35,7 @@ const services = [
 // --------------------
 // Component for a Service Card
 // --------------------
-const ServiceCard = ({ service }) => (
-  <Card className="bg-white border-none shadow-md hover:shadow-xl transition-all duration-300">
-    <CardHeader>
-      <div className="text-3xl mb-2">{service.icon}</div>  {/* Fixed typo: 3x1 -> 3xl */}
-      <CardTitle className="text-xl">{service.title}</CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-1">
-      <ul className="text-sm text-gray-600 space-y-1">
-        {service.points.map((point: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined, index: Key | null | undefined) => (
-          <li key={index} className="flex items-center">
-            <MoveRight className="w-4 h-4 mr-2 text-blue-500" />
-            {point}
-          </li>
-        ))}
-      </ul>
-      <Link href={service.href} className="text-blue-500 hover:text-blue-700 text-sm font-medium mt-4 block">
-        Read More
-      </Link>
-    </CardContent>
-  </Card>
-);
+
 
 export default function Home() {
   return (
@@ -71,23 +48,22 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
           <div className="text-2xl font-bold text-green-600">
-            <span className="text-4xl text-red-500">GBX</span><span className="text-red-500"></span>
+            <span className="text-4xl text-red-500">GBX</span>
           </div>
           <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
             <Link href="/" className="hover:text-red-500 transition duration-150">HOME</Link>
             <Link href="#service" className="hover:text-red-500 transition duration-150">SERVICES</Link>
             <Link href="#contact" className="hover:text-red-500 transition duration-150">CONTACT</Link>
             <Link href="/about" className="hover:text-red-500 transition duration-150">ABOUT</Link>
-            
             <Link href="/portfolio" className="hover:text-red-500 transition duration-150">PORTFOLIO</Link>
-            
-            
           </nav>
-          <div className="hidden md:block space-x-4">  {/* Fixed: removed extra space */}
-            <Button className="bg-red-500 hover:bg-red-600 text-white font-semibold shadow-lg">  {/* Fixed: consistent hover color */}
-              Sign Up 
-            </Button>
-            <Button variant="outline" className="text-red-500 border-red-500 hover:bg-red-50">Log In</Button>
+          <div className="hidden md:block space-x-4">
+            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold shadow-lg px-4 py-2 rounded">
+              Sign Up
+            </button>
+            <button className="text-red-500 border border-red-500 hover:bg-red-50 px-4 py-2 rounded">
+              Log In
+            </button>
           </div>
         </div>
       </header>
@@ -101,23 +77,22 @@ export default function Home() {
           
           {/* Text Content (Left Side) */}
           <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0 z-10">
-            <p className="text-lg text-black-700 font-medium mb-1"></p>
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-black-900 leading-tight">
-              <span className="text-red-500">G</span>o <span className="text-red-500">B</span>eyond <span className="text-black">e<span className="text-red-500">X</span>pectation</span>  {/* Fixed: text-black-500 -> text-black */}
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-black leading-tight">
+              <span className="text-red-500">G</span>o <span className="text-red-500">B</span>eyond <span className="text-black">e<span className="text-red-500">X</span>pectation</span>
             </h1>
-            <h2 className="text-3xl lg:text-2xl font-semibold text-gray-700 mt-1">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-gray-700 mt-1">
               INTERNET SERVICE PROVIDER
             </h2>
             <p className="text-lg text-gray-600 mt-1 max-w-md mx-auto md:mx-0">
               It's time for an internet connection that works as hard as you do.
             </p>
             <div className="mt-8 space-x-4">
-              <Button size="lg" className="bg-red-500 hover:bg-pink-600 text-white font-semibold shadow-lg">
+              <button className="bg-red-500 hover:bg-red-600 text-white font-semibold shadow-lg px-6 py-3 rounded text-lg">
                 Apply Now
-              </Button>
-              <Button size="lg" variant="outline" className="border-red-500 text-red-500 hover:bg-pink-50">
+              </button>
+              <button className="border border-red-500 text-red-500 hover:bg-red-50 px-6 py-3 rounded text-lg">
                 Let's Talk
-              </Button>
+              </button>
             </div>
           </div>
           
@@ -126,9 +101,9 @@ export default function Home() {
             <Image 
               src="/makmak1.jpg" 
               alt="Mark Barawel - INSTALLER" 
-              width={600}  // Adjust to actual image width
-              height={90}  // Adjust to actual image height
-              className="rounded-lg shadow-2xl max-w-full h-auto object-cover"  // Fixed typo: 2x1 -> 2xl
+              width={600}
+              height={400}
+              className="rounded-lg shadow-2xl max-w-full h-auto object-cover"
               priority
             />
           </div>
@@ -143,18 +118,7 @@ export default function Home() {
         {/* -------------------- 
           3. SERVICES SECTION
         -------------------- */}
-        <section id="service" className="py-30">
-          <div className="text-center mb-12">
-            <p className="text-lg text-red-500 font-semibold mb-2">MY SERVICES</p>
-            <h2 className="text-4xl font-bold text-gray-900">WHAT WE DO</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard key={index} service={service} />
-            ))}
-          </div>
-        </section>
+        
 
          <hr className="my-16" />
 
@@ -181,23 +145,22 @@ export default function Home() {
                 <p className="flex items-center">📩 markanthonybarawel01@gmail.com</p>
               </div>
               <div className="mt-8 space-x-4">
-                <Button className="bg-red-500 hover:bg-red-600">
-                  <Link href="contact">Read more</Link>
-                </Button>
-                <Button variant="outline">
-                   <span className="ml-2 text-pink-500"></span>
-                </Button>
-
-              
+                <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                  <Link href="/contact" className="text-white">Read more</Link>
+                </button>
+                <button className="border border-red-500 text-red-500 hover:bg-red-50 px-4 py-2 rounded">
+                  Call Now
+                </button>
               </div>
             </div>
           </div>
-          <footer>
-        <p>&copy; 2023 GBX Internet Service Provider. All rights reserved.</p>
-      </footer>
         </section>
         
       </main>
+      
+      <footer className="bg-gray-100 py-8 text-center text-gray-600">
+        <p>&copy; 2023 GBX Internet Service Provider. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
