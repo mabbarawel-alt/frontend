@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MoveRight } from 'lucide-react';
 import Image from "next/image";
 
+
 // --------------------
 // Mock Services Data
 // --------------------
@@ -50,7 +51,7 @@ export default function Home() {
           <div className="text-2xl font-bold text-green-600">
             <span className="text-4xl text-red-500">GBX</span>
           </div>
-          <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
+          <nav className="hidden md:flex space-x-8 text-black-700 font-medium">
             <Link href="/" className="hover:text-red-500 transition duration-150">HOME</Link>
             <Link href="#service" className="hover:text-red-500 transition duration-150">SERVICES</Link>
             <Link href="#contact" className="hover:text-red-500 transition duration-150">CONTACT</Link>
@@ -59,10 +60,10 @@ export default function Home() {
           </nav>
           <div className="hidden md:block space-x-4">
             <button className="bg-red-500 hover:bg-red-600 text-white font-semibold shadow-lg px-4 py-2 rounded">
-              Sign Up
+              <Link href="/register" className="text-white">Register</Link>
             </button>
             <button className="text-red-500 border border-red-500 hover:bg-red-50 px-4 py-2 rounded">
-              Log In
+              <Link href="/login" className="text-red">login</Link>
             </button>
           </div>
         </div>
@@ -80,10 +81,10 @@ export default function Home() {
             <h1 className="text-5xl lg:text-7xl font-extrabold text-black leading-tight">
               <span className="text-red-500">G</span>o <span className="text-red-500">B</span>eyond <span className="text-black">e<span className="text-red-500">X</span>pectation</span>
             </h1>
-            <h2 className="text-3xl lg:text-4xl font-semibold text-gray-700 mt-1">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-black-700 mt-1">
               INTERNET SERVICE PROVIDER
             </h2>
-            <p className="text-lg text-gray-600 mt-1 max-w-md mx-auto md:mx-0">
+            <p className="text-lg text-black-600 mt-1 max-w-md mx-auto md:mx-0">
               It's time for an internet connection that works as hard as you do.
             </p>
             <div className="mt-8 space-x-4">
@@ -115,16 +116,7 @@ export default function Home() {
         
         <hr className="my-16" />
 
-        {/* -------------------- 
-          3. SERVICES SECTION
-        -------------------- */}
         
-
-         <hr className="my-16" />
-
-        {/* -------------------- 
-          4. Call to Action
-        -------------------- */}
         <section id="contact" className="py-16">
           <div className="flex flex-col md:flex-row items-center bg-white/70 backdrop-blur-md rounded-lg p-10 shadow-xl border border-gray-100">
             <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
@@ -140,7 +132,7 @@ export default function Home() {
               </h3>
               <div className="grid grid-cols-2 gap-4 mt-6 text-sm text-gray-700">
                 <p className="flex items-center">📞 09912830262</p>
-                <p className="flex items-center">📩 markfreelancer30@gmail.com</p>
+                <p className="flex items-center">📩 mabbarawel@gbox.ncf.edu.ph</p>
                 <p className="flex items-center">📍 Zone 6, Belen, Calabanga, Camarines Sur</p>
                 <p className="flex items-center">📩 markanthonybarawel01@gmail.com</p>
               </div>

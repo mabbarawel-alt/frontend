@@ -1,11 +1,12 @@
 // pages/portfolio.js (or pages/index.js if you want it as the homepage)
 import Head from 'next/head';
+import Link from "next/link";
 
 export default function Portfolio() {
   return (
     <>
       <Head>
-        <title>Portfolio - GBX Internet Service Provider</title>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <style>{`
@@ -150,8 +151,31 @@ export default function Portfolio() {
           }
         }
       `}</style>
+      <title>Portfolio - GBX Internet Service Provider - HTTP </title>
+         <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-md shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-2 flex justify-between items-center h-1">
+          <div className="text-2xl font-bold text-white-600">
+            <span className="text-4xl text-white-500">GBX</span>
+          </div>
+          <nav className="hidden md:flex space-x-8 text-black-700 font-medium">
+            <Link href="/" className="hover:text-red-500 transition duration-150">HOME</Link>
+            <Link href="//" className="hover:text-red-500 transition duration-150">SERVICES</Link>
+            <Link href="//" className="hover:text-red-500 transition duration-150">CONTACT</Link>
+            <Link href="/about" className="hover:text-red-500 transition duration-150">ABOUT</Link>
+            <Link href="/portfolio" className="hover:text-red-500 transition duration-150">PORTFOLIO</Link>
+          </nav>
+          <div className="hidden md:block space-x-4">
+            <button className="">
+              
+            </button>
+            <button className="">
+              
+            </button>
+          </div>
+        </div>
+      </header>
       <header>
-        <h1>📂 GBX Portfolio - Showcasing Our Work</h1>
+        <h1>📂 GBX Portfolio - Showcasing Our Work - HTTP</h1>
         <p>Explore our portfolio of successful projects, from internet installations to technology solutions. See how GBX has delivered reliable connectivity and innovative services to homes and businesses.</p>
       </header>
 
@@ -162,7 +186,7 @@ export default function Portfolio() {
             <img src="https://via.placeholder.com/400x250/ff0000/ffffff?text=Rural+Home+Setup" alt="Rural Home Internet Setup" />
             <h3>🏡 Rural Home Connectivity</h3>
             <p>Installed P2P wireless network for a family in a remote area, enabling smooth online schooling and work-from-home capabilities.</p>
-            <div className="project-details">Duration: 2 weeks | Speed: 50 Mbps | Satisfied Clients: 1 Family</div>
+            <div className="project-details">Duration: 2 weeks | Speed: 10 - 100 Mbps | Satisfied Clients: 1 Family</div>
           </div>
           <div className="project-item">
             <img src="https://via.placeholder.com/400x250/ff0000/ffffff?text=Business+Office+Fiber" alt="Business Office Fiber Installation" />
